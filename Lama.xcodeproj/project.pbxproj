@@ -15,6 +15,9 @@
 		FE61909426CAA80E00B4D697 /* Lama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE61909226CAA80E00B4D697 /* Lama.xcdatamodeld */; };
 		FE61909F26CAA80E00B4D697 /* LamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61909E26CAA80E00B4D697 /* LamaTests.swift */; };
 		FE6190AA26CAA80E00B4D697 /* LamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6190A926CAA80E00B4D697 /* LamaUITests.swift */; };
+		FEB03DD32701911B00015525 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD22701911B00015525 /* LoginView.swift */; };
+		FEB03DD62701915500015525 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD52701915500015525 /* HttpClient.swift */; };
+		FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD92701959700015525 /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FE6190A526CAA80E00B4D697 /* LamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LamaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6190A926CAA80E00B4D697 /* LamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaUITests.swift; sourceTree = "<group>"; };
 		FE6190AB26CAA80E00B4D697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB03DD22701911B00015525 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FEB03DD52701915500015525 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		FEB03DD92701959700015525 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		FE61908626CAA80D00B4D697 /* Lama */ = {
 			isa = PBXGroup;
 			children = (
+				FEB03DD42701913900015525 /* Networking */,
+				FEB03DD1270190FE00015525 /* Login */,
 				FE61908726CAA80D00B4D697 /* LamaApp.swift */,
 				FE61908926CAA80D00B4D697 /* ContentView.swift */,
 				FE61908B26CAA80E00B4D697 /* Assets.xcassets */,
@@ -134,6 +142,39 @@
 				FE6190AB26CAA80E00B4D697 /* Info.plist */,
 			);
 			path = LamaUITests;
+			sourceTree = "<group>";
+		};
+		FEB03DD1270190FE00015525 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FEB03DD82701958200015525 /* domain */,
+				FEB03DD72701957600015525 /* model */,
+				FEB03DD22701911B00015525 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FEB03DD42701913900015525 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FEB03DD52701915500015525 /* HttpClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FEB03DD72701957600015525 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FEB03DD82701958200015525 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				FEB03DD92701959700015525 /* LoginRequest.swift */,
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +309,9 @@
 				FE61909426CAA80E00B4D697 /* Lama.xcdatamodeld in Sources */,
 				FE61909126CAA80E00B4D697 /* Persistence.swift in Sources */,
 				FE61908A26CAA80D00B4D697 /* ContentView.swift in Sources */,
+				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
+				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
+				FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */,
 				FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
