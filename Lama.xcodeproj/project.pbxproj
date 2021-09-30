@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE29EE522702121400CD6594 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE512702121400CD6594 /* LoginResponse.swift */; };
+		FE29EE5627021A4600CD6594 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5527021A4600CD6594 /* LoginService.swift */; };
+		FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5727021CD000CD6594 /* LoginViewModel.swift */; };
+		FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5E27022C4000CD6594 /* MemberView.swift */; };
+		FE29EE6127022D1100CD6594 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE6027022D1100CD6594 /* Routes.swift */; };
+		FE29EE632702329900CD6594 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE622702329900CD6594 /* CalendarView.swift */; };
 		FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61908726CAA80D00B4D697 /* LamaApp.swift */; };
-		FE61908A26CAA80D00B4D697 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61908926CAA80D00B4D697 /* ContentView.swift */; };
 		FE61908C26CAA80E00B4D697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908B26CAA80E00B4D697 /* Assets.xcassets */; };
 		FE61908F26CAA80E00B4D697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908E26CAA80E00B4D697 /* Preview Assets.xcassets */; };
 		FE61909126CAA80E00B4D697 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61909026CAA80E00B4D697 /* Persistence.swift */; };
@@ -38,9 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE29EE512702121400CD6594 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		FE29EE5527021A4600CD6594 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		FE29EE5727021CD000CD6594 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FE29EE5E27022C4000CD6594 /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
+		FE29EE6027022D1100CD6594 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		FE29EE622702329900CD6594 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FE61908426CAA80D00B4D697 /* Lama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61908726CAA80D00B4D697 /* LamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaApp.swift; sourceTree = "<group>"; };
-		FE61908926CAA80D00B4D697 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE61908B26CAA80E00B4D697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE61908E26CAA80E00B4D697 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE61909026CAA80E00B4D697 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -82,6 +92,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE29EE5927021D1500CD6594 /* Zen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Zen;
+			sourceTree = "<group>";
+		};
+		FE29EE5A27022BEF00CD6594 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				FE29EE5E27022C4000CD6594 /* MemberView.swift */,
+				FE29EE5B27022BF500CD6594 /* Calendar */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		FE29EE5B27022BF500CD6594 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				FE29EE622702329900CD6594 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		FE61907B26CAA80C00B4D697 = {
 			isa = PBXGroup;
 			children = (
@@ -105,15 +139,17 @@
 		FE61908626CAA80D00B4D697 /* Lama */ = {
 			isa = PBXGroup;
 			children = (
+				FE29EE5A27022BEF00CD6594 /* Member */,
+				FE29EE5927021D1500CD6594 /* Zen */,
 				FEB03DD42701913900015525 /* Networking */,
 				FEB03DD1270190FE00015525 /* Login */,
 				FE61908726CAA80D00B4D697 /* LamaApp.swift */,
-				FE61908926CAA80D00B4D697 /* ContentView.swift */,
 				FE61908B26CAA80E00B4D697 /* Assets.xcassets */,
 				FE61909026CAA80E00B4D697 /* Persistence.swift */,
 				FE61909526CAA80E00B4D697 /* Info.plist */,
 				FE61909226CAA80E00B4D697 /* Lama.xcdatamodeld */,
 				FE61908D26CAA80E00B4D697 /* Preview Content */,
+				FE29EE6027022D1100CD6594 /* Routes.swift */,
 			);
 			path = Lama;
 			sourceTree = "<group>";
@@ -147,9 +183,9 @@
 		FEB03DD1270190FE00015525 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FEB03DD82701958200015525 /* domain */,
-				FEB03DD72701957600015525 /* model */,
+				FEB03DD82701958200015525 /* Model */,
 				FEB03DD22701911B00015525 /* LoginView.swift */,
+				FE29EE5727021CD000CD6594 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -162,19 +198,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		FEB03DD72701957600015525 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		FEB03DD82701958200015525 /* domain */ = {
+		FEB03DD82701958200015525 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FEB03DD92701959700015525 /* LoginRequest.swift */,
+				FE29EE512702121400CD6594 /* LoginResponse.swift */,
+				FE29EE5527021A4600CD6594 /* LoginService.swift */,
 			);
-			path = domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +339,15 @@
 			files = (
 				FE61909426CAA80E00B4D697 /* Lama.xcdatamodeld in Sources */,
 				FE61909126CAA80E00B4D697 /* Persistence.swift in Sources */,
-				FE61908A26CAA80D00B4D697 /* ContentView.swift in Sources */,
+				FE29EE632702329900CD6594 /* CalendarView.swift in Sources */,
 				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
+				FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
 				FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */,
+				FE29EE5627021A4600CD6594 /* LoginService.swift in Sources */,
+				FE29EE522702121400CD6594 /* LoginResponse.swift in Sources */,
+				FE29EE6127022D1100CD6594 /* Routes.swift in Sources */,
+				FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */,
 				FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,7 +510,7 @@
 				DEVELOPMENT_TEAM = 9V4YCUYKQL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.mauricee.Lama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -496,7 +532,7 @@
 				DEVELOPMENT_TEAM = 9V4YCUYKQL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,7 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.mauricee.Lama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct LamaApp: App {
-    let persistenceController = PersistenceController.shared
+
+    private let persistenceController = PersistenceController.shared
+    @ObservedObject private var router = Router.shared
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            switch router.route {
+            case .login: LoginView(viewModel: LoginViewModel(router: router, client: HttpClient.shared)).environment(\.managedObjectContext, persistenceController.container.viewContext)
+            case .member: MemberView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }
