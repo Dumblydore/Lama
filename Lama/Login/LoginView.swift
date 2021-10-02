@@ -1,26 +1,50 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel: LoginViewModel
-    
+    enum Field {
+        case emailAddress
+        case password
+    }
+
+
+
+    @ObservedObject private var viewModel: LoginViewModel
+    @FocusState private var focusedField: Field?
+
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                TextField("Enter Username", text: $viewModel.username).textFieldStyle(RoundedBorderTextFieldStyle())
-                SecureField("Enter Password", text: $viewModel.password).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Enter Username", text: $viewModel.username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .focused($focusedField, equals: .emailAddress)
+                    .textContentType(.emailAddress)
+                    .submitLabel(.next)
+                SecureField("Enter Password", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .focused($focusedField, equals: .password)
+                    .textContentType(.password)
+                    .submitLabel(.send)
                 ZStack {
                     Button("Login", action: viewModel.login).disabled(viewModel.enableLogin == false)
                         .buttonStyle(BorderedButtonStyle())
+//                        .alert
 //                        .alert(isPresented: (viewModel.loginState == .Failure))
                     if (viewModel.loginState == .Loading) {
                         ProgressView()
                     }
                 }
-            }.padding()
+            }.padding().onSubmit {
+                switch focusedField {
+                case .emailAddress:
+                    focusedField = .password
+                default:
+                    viewModel.login()
+                }
+            }
         }
     }
 }

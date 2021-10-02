@@ -23,6 +23,16 @@
 		FEB03DD32701911B00015525 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD22701911B00015525 /* LoginView.swift */; };
 		FEB03DD62701915500015525 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD52701915500015525 /* HttpClient.swift */; };
 		FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD92701959700015525 /* LoginRequest.swift */; };
+		FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A72270649D3000A1C42 /* TodayView.swift */; };
+		FEFD8A7627064B98000A1C42 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7527064B98000A1C42 /* ReservationView.swift */; };
+		FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7727064BAA000A1C42 /* ReservationResponse.swift */; };
+		FEFD8A7A27064D5B000A1C42 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7927064D5B000A1C42 /* ReservationRequest.swift */; };
+		FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7B27064D95000A1C42 /* ReservationService.swift */; };
+		FEFD8A7F27064E99000A1C42 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */; };
+		FEFD8A8127064F76000A1C42 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A8027064F76000A1C42 /* ViewModel.swift */; };
+		FEFD8A8427077587000A1C42 /* ZenApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A8327077587000A1C42 /* ZenApiClient.swift */; };
+		FEFD8A8727077721000A1C42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A8627077721000A1C42 /* Session.swift */; };
+		FEFD8A892708C402000A1C42 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A882708C402000A1C42 /* UserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +75,16 @@
 		FEB03DD22701911B00015525 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FEB03DD52701915500015525 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FEB03DD92701959700015525 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		FEFD8A72270649D3000A1C42 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		FEFD8A7527064B98000A1C42 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		FEFD8A7727064BAA000A1C42 /* ReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResponse.swift; sourceTree = "<group>"; };
+		FEFD8A7927064D5B000A1C42 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
+		FEFD8A7B27064D95000A1C42 /* ReservationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
+		FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
+		FEFD8A8027064F76000A1C42 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FEFD8A8327077587000A1C42 /* ZenApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenApiClient.swift; sourceTree = "<group>"; };
+		FEFD8A8627077721000A1C42 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FEFD8A882708C402000A1C42 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,18 +112,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE29EE5927021D1500CD6594 /* Zen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Zen;
-			sourceTree = "<group>";
-		};
 		FE29EE5A27022BEF00CD6594 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				FE29EE5E27022C4000CD6594 /* MemberView.swift */,
+				FEFD8A8527077706000A1C42 /* Model */,
 				FE29EE5B27022BF500CD6594 /* Calendar */,
+				FEFD8A7427064B63000A1C42 /* Reservations */,
+				FEFD8A71270649C0000A1C42 /* Today */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -140,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FE29EE5A27022BEF00CD6594 /* Member */,
-				FE29EE5927021D1500CD6594 /* Zen */,
+				FE29EE5E27022C4000CD6594 /* MemberView.swift */,
 				FEB03DD42701913900015525 /* Networking */,
 				FEB03DD1270190FE00015525 /* Login */,
 				FE61908726CAA80D00B4D697 /* LamaApp.swift */,
@@ -150,6 +165,7 @@
 				FE61909226CAA80E00B4D697 /* Lama.xcdatamodeld */,
 				FE61908D26CAA80E00B4D697 /* Preview Content */,
 				FE29EE6027022D1100CD6594 /* Routes.swift */,
+				FEFD8A8027064F76000A1C42 /* ViewModel.swift */,
 			);
 			path = Lama;
 			sourceTree = "<group>";
@@ -194,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				FEB03DD52701915500015525 /* HttpClient.swift */,
+				FEFD8A8327077587000A1C42 /* ZenApiClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -204,6 +221,43 @@
 				FEB03DD92701959700015525 /* LoginRequest.swift */,
 				FE29EE512702121400CD6594 /* LoginResponse.swift */,
 				FE29EE5527021A4600CD6594 /* LoginService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEFD8A71270649C0000A1C42 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				FEFD8A7D27064E76000A1C42 /* Model */,
+				FEFD8A7527064B98000A1C42 /* ReservationView.swift */,
+				FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */,
+				FEFD8A72270649D3000A1C42 /* TodayView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		FEFD8A7427064B63000A1C42 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		FEFD8A7D27064E76000A1C42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEFD8A7727064BAA000A1C42 /* ReservationResponse.swift */,
+				FEFD8A7927064D5B000A1C42 /* ReservationRequest.swift */,
+				FEFD8A7B27064D95000A1C42 /* ReservationService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEFD8A8527077706000A1C42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEFD8A8627077721000A1C42 /* Session.swift */,
+				FEFD8A882708C402000A1C42 /* UserResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,15 +394,25 @@
 				FE61909426CAA80E00B4D697 /* Lama.xcdatamodeld in Sources */,
 				FE61909126CAA80E00B4D697 /* Persistence.swift in Sources */,
 				FE29EE632702329900CD6594 /* CalendarView.swift in Sources */,
+				FEFD8A8427077587000A1C42 /* ZenApiClient.swift in Sources */,
+				FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */,
 				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
 				FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
+				FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */,
+				FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */,
+				FEFD8A7F27064E99000A1C42 /* ReservationViewModel.swift in Sources */,
 				FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */,
+				FEFD8A8127064F76000A1C42 /* ViewModel.swift in Sources */,
 				FE29EE5627021A4600CD6594 /* LoginService.swift in Sources */,
+				FEFD8A8727077721000A1C42 /* Session.swift in Sources */,
+				FEFD8A7627064B98000A1C42 /* ReservationView.swift in Sources */,
 				FE29EE522702121400CD6594 /* LoginResponse.swift in Sources */,
 				FE29EE6127022D1100CD6594 /* Routes.swift in Sources */,
 				FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */,
+				FEFD8A7A27064D5B000A1C42 /* ReservationRequest.swift in Sources */,
 				FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */,
+				FEFD8A892708C402000A1C42 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

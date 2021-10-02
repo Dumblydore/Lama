@@ -15,5 +15,5 @@ final class Router: ObservableObject {
 
 enum Route {
     case login
-    case member(LoginResponse)
+    case member(Session)
 }

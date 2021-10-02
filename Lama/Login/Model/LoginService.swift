@@ -7,9 +7,15 @@
 
 import Foundation
 
-extension Post {
+extension HttpClient {
     func login(username: String, password: String) async throws -> LoginResponse {
         let request = LoginRequest(username: username, password: password)
-        return try await HttpClient.shared.post(url: "https://memberappv220.zenplanner.com/auth/v1/login", body: request)
+        return try await post(url: "https://memberappv220.zenplanner.com/auth/v1/login", body: request)
+    }
+
+    func currentUser(authToken: String) async throws -> UserResponse {
+        return try await get(url: "https://memberappapiv220.zenplanner.com/elements/api-v2/profiles/current", headers: [
+            "Authorization": "Bearer \(authToken)"
+        ])
     }
 }
