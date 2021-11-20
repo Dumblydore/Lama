@@ -12,8 +12,10 @@
 		FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5727021CD000CD6594 /* LoginViewModel.swift */; };
 		FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5E27022C4000CD6594 /* MemberView.swift */; };
 		FE29EE6127022D1100CD6594 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE6027022D1100CD6594 /* Routes.swift */; };
+
 		FE29EE632702329900CD6594 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE622702329900CD6594 /* CalendarView.swift */; };
 		FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */; };
+		FE2B40DE27091D35007C9FA7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B40DD27091D35007C9FA7 /* Repository.swift */; };
 		FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61908726CAA80D00B4D697 /* LamaApp.swift */; };
 		FE61908C26CAA80E00B4D697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908B26CAA80E00B4D697 /* Assets.xcassets */; };
 		FE61908F26CAA80E00B4D697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908E26CAA80E00B4D697 /* Preview Assets.xcassets */; };
@@ -21,6 +23,7 @@
 		FE61909426CAA80E00B4D697 /* Lama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE61909226CAA80E00B4D697 /* Lama.xcdatamodeld */; };
 		FE61909F26CAA80E00B4D697 /* LamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61909E26CAA80E00B4D697 /* LamaTests.swift */; };
 		FE6190AA26CAA80E00B4D697 /* LamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6190A926CAA80E00B4D697 /* LamaUITests.swift */; };
+		FE95595A27445816009D589B /* DatePagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95595927445816009D589B /* DatePagerView.swift */; };
 		FEB03DD32701911B00015525 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD22701911B00015525 /* LoginView.swift */; };
 		FEB03DD62701915500015525 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD52701915500015525 /* HttpClient.swift */; };
 		FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB03DD92701959700015525 /* LoginRequest.swift */; };
@@ -61,6 +64,7 @@
 		FE29EE6027022D1100CD6594 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		FE29EE622702329900CD6594 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		FE2B40DD27091D35007C9FA7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FE61908426CAA80D00B4D697 /* Lama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61908726CAA80D00B4D697 /* LamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaApp.swift; sourceTree = "<group>"; };
 		FE61908B26CAA80E00B4D697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		FE6190A526CAA80E00B4D697 /* LamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LamaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6190A926CAA80E00B4D697 /* LamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaUITests.swift; sourceTree = "<group>"; };
 		FE6190AB26CAA80E00B4D697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE95595927445816009D589B /* DatePagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePagerView.swift; sourceTree = "<group>"; };
 		FEB03DD22701911B00015525 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FEB03DD52701915500015525 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FEB03DD92701959700015525 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 		FE29EE5A27022BEF00CD6594 /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				FE29EE5E27022C4000CD6594 /* MemberView.swift */,
 				FEFD8A8527077706000A1C42 /* Model */,
 				FE29EE5B27022BF500CD6594 /* Calendar */,
 				FEFD8A7427064B63000A1C42 /* Reservations */,
@@ -140,6 +146,15 @@
 			children = (
 			);
 			path = Model;
+		FE2B40DC27091BD0007C9FA7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FE61909026CAA80E00B4D697 /* Persistence.swift */,
+				FE29EE6027022D1100CD6594 /* Routes.swift */,
+				FEFD8A8027064F76000A1C42 /* ViewModel.swift */,
+				FE2B40DD27091D35007C9FA7 /* Repository.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FE61907B26CAA80C00B4D697 = {
@@ -165,18 +180,15 @@
 		FE61908626CAA80D00B4D697 /* Lama */ = {
 			isa = PBXGroup;
 			children = (
+				FE2B40DC27091BD0007C9FA7 /* Utils */,
 				FE29EE5A27022BEF00CD6594 /* Member */,
-				FE29EE5E27022C4000CD6594 /* MemberView.swift */,
 				FEB03DD42701913900015525 /* Networking */,
 				FEB03DD1270190FE00015525 /* Login */,
 				FE61908726CAA80D00B4D697 /* LamaApp.swift */,
 				FE61908B26CAA80E00B4D697 /* Assets.xcassets */,
-				FE61909026CAA80E00B4D697 /* Persistence.swift */,
 				FE61909526CAA80E00B4D697 /* Info.plist */,
 				FE61909226CAA80E00B4D697 /* Lama.xcdatamodeld */,
 				FE61908D26CAA80E00B4D697 /* Preview Content */,
-				FE29EE6027022D1100CD6594 /* Routes.swift */,
-				FEFD8A8027064F76000A1C42 /* ViewModel.swift */,
 			);
 			path = Lama;
 			sourceTree = "<group>";
@@ -250,6 +262,7 @@
 		FEFD8A7427064B63000A1C42 /* Reservations */ = {
 			isa = PBXGroup;
 			children = (
+				FE95595927445816009D589B /* DatePagerView.swift */,
 			);
 			path = Reservations;
 			sourceTree = "<group>";
@@ -412,10 +425,12 @@
 				FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
 				FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */,
+				FE2B40DE27091D35007C9FA7 /* Repository.swift in Sources */,
 				FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */,
 				FEFD8A7F27064E99000A1C42 /* ReservationViewModel.swift in Sources */,
 				FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */,
 				FEFD8A8127064F76000A1C42 /* ViewModel.swift in Sources */,
+				FE95595A27445816009D589B /* DatePagerView.swift in Sources */,
 				FE29EE5627021A4600CD6594 /* LoginService.swift in Sources */,
 				FEFD8A8727077721000A1C42 /* Session.swift in Sources */,
 				FEFD8A7627064B98000A1C42 /* ReservationView.swift in Sources */,
