@@ -12,4 +12,6 @@ struct ZenApiClient {
         let request = ReservationRequest(personID: personId)
         return try await httpClient.post(url: "https://memberappv220.zenplanner.com/elements/api-v2/calendars/reservations", body: request, headers: ["Authorization": "Bearer \(session.token)"])
     }
+    
+//    func getClassesForDate(personId: String, date: Date) async throws -> 
 }

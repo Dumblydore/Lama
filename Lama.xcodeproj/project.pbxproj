@@ -13,6 +13,7 @@
 		FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5E27022C4000CD6594 /* MemberView.swift */; };
 		FE29EE6127022D1100CD6594 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE6027022D1100CD6594 /* Routes.swift */; };
 		FE29EE632702329900CD6594 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE622702329900CD6594 /* CalendarView.swift */; };
+		FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */; };
 		FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61908726CAA80D00B4D697 /* LamaApp.swift */; };
 		FE61908C26CAA80E00B4D697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908B26CAA80E00B4D697 /* Assets.xcassets */; };
 		FE61908F26CAA80E00B4D697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908E26CAA80E00B4D697 /* Preview Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		FE29EE5E27022C4000CD6594 /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		FE29EE6027022D1100CD6594 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		FE29EE622702329900CD6594 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		FE61908426CAA80D00B4D697 /* Lama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61908726CAA80D00B4D697 /* LamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaApp.swift; sourceTree = "<group>"; };
 		FE61908B26CAA80E00B4D697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,9 +128,18 @@
 		FE29EE5B27022BF500CD6594 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				FE5AD9BE27487D3D0022C08D /* Model */,
 				FE29EE622702329900CD6594 /* CalendarView.swift */,
+				FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		FE5AD9BE27487D3D0022C08D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FE61907B26CAA80C00B4D697 = {
@@ -396,6 +407,7 @@
 				FE29EE632702329900CD6594 /* CalendarView.swift in Sources */,
 				FEFD8A8427077587000A1C42 /* ZenApiClient.swift in Sources */,
 				FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */,
+				FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */,
 				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
 				FE29EE5F27022C4000CD6594 /* MemberView.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
@@ -571,7 +583,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lama/Preview Content\"";
-				DEVELOPMENT_TEAM = 9V4YCUYKQL;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -593,7 +605,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lama/Preview Content\"";
-				DEVELOPMENT_TEAM = 9V4YCUYKQL;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -616,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V4YCUYKQL;
 				INFOPLIST_FILE = LamaTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,7 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V4YCUYKQL;
 				INFOPLIST_FILE = LamaTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

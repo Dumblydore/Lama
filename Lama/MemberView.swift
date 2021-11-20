@@ -23,15 +23,16 @@ struct MemberView: View {
                 .padding()
                 .shadow(radius: 5)
                 .background(.white)
+            let calendarViewModel = CalendarViewModel()
             TabView {
                 //TODO
                 TodayView(viewModel: ReservationListViewModel(personId: session.userId, client: zenClient)).tabItem {
                     Text("Dashboard")
                 }
-                CalendarView().tabItem {
+                CalendarView(viewModel: calendarViewModel).tabItem {
                     Text("Calendar")
                 }
-                CalendarView().tabItem {
+                CalendarView(viewModel: calendarViewModel).tabItem {
                     Text("History")
                 }
             }
