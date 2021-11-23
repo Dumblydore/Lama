@@ -19,28 +19,36 @@ struct CalendarView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("November").font(.headline)
-            ScrollView(.horizontal) {
-                        LazyHStack {
-                            ForEach(viewModel.dates, id: \.self) { date in
-                                VStack(alignment: .center) {
-                                    Text(dayOfWeekFormat.string(from: date))
-                                    Text(dayFormat.string(from: date))
+        NavigationView {
+            VStack {
+                ScrollView(.horizontal) {
+                            LazyHStack {
+                                ForEach(viewModel.dates, id: \.self) { date in
+                                    VStack(alignment: .center) {
+                                        Text(dayOfWeekFormat.string(from: date))
+                                        Text(dayFormat.string(from: date))
+                                    }
                                 }
                             }
+                }.fixedSize(horizontal: false, vertical: true)
+                Divider()
+                ScrollView(.vertical) {
+                    LazyVStack {
+                        ForEach(viewModel.classes, id: \.self.id) { classItem in
+                            ClassView(classItem: classItem)
+                            Divider()
                         }
-            }.fixedSize(horizontal: false, vertical: true)
-            Divider()
-            ScrollView(.vertical) {
-                LazyVStack {
-                    ForEach(viewModel.classes, id: \.self.id) { classItem in
-                        ClassView(classItem: classItem)
-                        Divider()
                     }
                 }
-            }
-            Spacer()
+                Spacer()
+            }.navigationTitle("November").navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                                      Button("Workouts") {
+                                          print("Help tapped!")
+                                      }
+                                  }
+                              }
         }
     }
 }

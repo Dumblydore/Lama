@@ -16,26 +16,19 @@ struct MemberView: View {
         self.zenClient = zenApiClient
     }
     var body: some View {
-        VStack {
-            HStack {
-                Text(session.username)
-            }.foregroundColor(.black)
-                .padding()
-                .shadow(radius: 5)
-                .background(.white)
-            let calendarViewModel = CalendarViewModel()
             TabView {
-                //TODO
-                TodayView(viewModel: ReservationListViewModel(personId: session.userId, client: zenClient)).tabItem {
+                TodayView(viewModel: ReservationListViewModel(session: session, client: zenClient)).tabItem {
+                    Image(systemName: "doc.text.image")
                     Text("Dashboard")
                 }
-                CalendarView(viewModel: calendarViewModel).tabItem {
+                CalendarView(viewModel: CalendarViewModel()).tabItem {
+                    Image(systemName: "calendar")
                     Text("Calendar")
                 }
-                CalendarView(viewModel: calendarViewModel).tabItem {
+                HistoryView(viewModel: HistoryViewModel(session: session)).tabItem {
+                    Image(systemName: "clock.arrow.circlepath")
                     Text("History")
                 }
             }
-        }
     }
 }

@@ -12,6 +12,8 @@
 		FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE5727021CD000CD6594 /* LoginViewModel.swift */; };
 		FE29EE632702329900CD6594 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29EE622702329900CD6594 /* CalendarView.swift */; };
 		FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */; };
+		FE5AD9C1274D34B90022C08D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AD9C0274D34B90022C08D /* HistoryView.swift */; };
+		FE5AD9C3274D34D00022C08D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AD9C2274D34D00022C08D /* HistoryViewModel.swift */; };
 		FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE61908726CAA80D00B4D697 /* LamaApp.swift */; };
 		FE61908C26CAA80E00B4D697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908B26CAA80E00B4D697 /* Assets.xcassets */; };
 		FE61908F26CAA80E00B4D697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE61908E26CAA80E00B4D697 /* Preview Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		FE29EE5727021CD000CD6594 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FE29EE622702329900CD6594 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		FE5AD9C0274D34B90022C08D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		FE5AD9C2274D34D00022C08D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		FE61908426CAA80D00B4D697 /* Lama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE61908726CAA80D00B4D697 /* LamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamaApp.swift; sourceTree = "<group>"; };
 		FE61908B26CAA80E00B4D697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,10 +123,10 @@
 		FE29EE5A27022BEF00CD6594 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				FE29EE5B27022BF500CD6594 /* Calendar */,
 				FEFD8A8527077706000A1C42 /* Model */,
-				FEFD8A7427064B63000A1C42 /* Reservations */,
 				FEFD8A71270649C0000A1C42 /* Today */,
+				FE29EE5B27022BF500CD6594 /* Calendar */,
+				FE5AD9BF274D34930022C08D /* History */,
 				FEDA70A8274D2C95007267F0 /* MemberView.swift */,
 			);
 			path = Member;
@@ -135,6 +139,15 @@
 				FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		FE5AD9BF274D34930022C08D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FE5AD9C0274D34B90022C08D /* HistoryView.swift */,
+				FE5AD9C2274D34D00022C08D /* HistoryViewModel.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		FE61907B26CAA80C00B4D697 = {
@@ -248,13 +261,6 @@
 				FEFD8A72270649D3000A1C42 /* TodayView.swift */,
 			);
 			path = Today;
-			sourceTree = "<group>";
-		};
-		FEFD8A7427064B63000A1C42 /* Reservations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reservations;
 			sourceTree = "<group>";
 		};
 		FEFD8A7D27064E76000A1C42 /* Model */ = {
@@ -412,9 +418,11 @@
 				FEDA70B6274D2DD5007267F0 /* Persistence.swift in Sources */,
 				FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */,
 				FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */,
+				FE5AD9C1274D34B90022C08D /* HistoryView.swift in Sources */,
 				FEDA70A9274D2C95007267F0 /* MemberView.swift in Sources */,
 				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
+				FE5AD9C3274D34D00022C08D /* HistoryViewModel.swift in Sources */,
 				FEDA70B8274D2DD5007267F0 /* Repository.swift in Sources */,
 				FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */,
 				FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */,

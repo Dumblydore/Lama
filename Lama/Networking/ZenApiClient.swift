@@ -12,7 +12,7 @@ struct ZenApiClient {
 
     func getReservations(personId: String) async throws -> ReservationResponse {
         let request = ReservationRequest(personID: personId)
-        return try await httpClient.post(url: "", body: request, headers: ["Authorization": "Bearer \(session.token)"])
+        return try await httpClient.post(url: host, body: request, headers: ["Authorization": "Bearer \(session.token)"])
     }
     
 //    func getClassesForDate(personId: String, date: Date) async throws -> 

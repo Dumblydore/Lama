@@ -8,17 +8,19 @@
 import Foundation
 
 class ReservationListViewModel: ViewModel, ObservableObject {
-    @Published var isLoading: Bool = false
-    @Published var hasError: Bool = false
+    @Published public private(set) var isLoading: Bool = false
+    @Published public private(set) var hasError: Bool = false
     @Published public private(set) var reservations: [ReservationListItem] = []
+    @Published public private(set) var name: String = ""
 
-    private let personId: String
+    private let session: Session
 
-    init(personId: String, client: ZenApiClient) {
-        self.personId = personId
+    init(session: Session, client: ZenApiClient) {
+        self.session = session
+        self.name = session.firstName
         Task {
             updateState { self.isLoading = true }
-            guard let response = try? await client.getReservations(personId: personId) else {
+            guard let response = try? await client.getReservations(personId: session.userId) else {
                 updateState {
                     self.isLoading = false
                     self.hasError = true

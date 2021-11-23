@@ -13,16 +13,20 @@ struct TodayView: View {
         self.viewModel = viewModel
     }
     var body: some View {
-        if(viewModel.isLoading) {
-            ProgressView()
-        } else if (viewModel.hasError) {
-            Text("Error!")
-        } else if(viewModel.reservations.isEmpty) {
-            Text("No reservations!")
-        } else {
-            List(viewModel.reservations) {
-                Text($0.name)
-            }
+        NavigationView{
+            VStack {
+                if(viewModel.isLoading) {
+                    ProgressView()
+                } else if (viewModel.hasError) {
+                    Text("Error!")
+                } else if(viewModel.reservations.isEmpty) {
+                    Text("No reservations!")
+                } else {
+                    List(viewModel.reservations) {
+                        Text($0.name)
+                    }
+                }
+            }.navigationTitle("Hello, \(viewModel.name)").navigationBarTitleDisplayMode(.large)
         }
     }
 }
