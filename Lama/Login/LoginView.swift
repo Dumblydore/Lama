@@ -42,6 +42,7 @@ struct LoginView: View {
                 case .emailAddress:
                     focusedField = .password
                 default:
+                    focusedField = nil
                     viewModel.login()
                 }
             }

@@ -1,5 +1,5 @@
 import Foundation
 
 struct ReservationRequest: Codable {
-    let personID: String
+    let personId: String
 }

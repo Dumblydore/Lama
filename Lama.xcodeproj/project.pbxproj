@@ -123,6 +123,7 @@
 		FE29EE5A27022BEF00CD6594 /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				FEDA70BA274D6965007267F0 /* Workout */,
 				FEFD8A8527077706000A1C42 /* Model */,
 				FEFD8A71270649C0000A1C42 /* Today */,
 				FE29EE5B27022BF500CD6594 /* Calendar */,
@@ -250,6 +251,13 @@
 				FEDA70B5274D2DD5007267F0 /* Routes.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FEDA70BA274D6965007267F0 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 		FEFD8A71270649C0000A1C42 /* Today */ = {
@@ -595,7 +603,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lama/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YM5GM9H97G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -617,7 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lama/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YM5GM9H97G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Lama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

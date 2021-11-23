@@ -22,8 +22,8 @@ final class LoginViewModel: ObservableObject {
             updateEnableLogin()
         }
     }
-    @Published var enableLogin: Bool = false
-    @Published var loginState: LoginState = .None
+    @Published public private(set) var enableLogin: Bool = false
+    @Published public private(set)var loginState: LoginState = .None
 
     init (router: Router, client: HttpClient) {
         self.router = router

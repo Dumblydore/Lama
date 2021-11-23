@@ -13,8 +13,8 @@ struct TodayView: View {
         self.viewModel = viewModel
     }
     var body: some View {
-        NavigationView{
-            VStack {
+        NavigationView {
+            ZStack {
                 if(viewModel.isLoading) {
                     ProgressView()
                 } else if (viewModel.hasError) {
@@ -22,8 +22,17 @@ struct TodayView: View {
                 } else if(viewModel.reservations.isEmpty) {
                     Text("No reservations!")
                 } else {
-                    List(viewModel.reservations) {
-                        Text($0.name)
+                    ScrollView(.vertical) {
+                        VStack {
+                            Text("Reservations").font(.headline).padding(.vertical, 10)
+                            ForEach(viewModel.reservations) { reservation in
+                                VStack(alignment: .leading) {
+                                    Text("\(reservation.startTime)-\(reservation.endTime)").font(.subheadline)
+                                    Text(reservation.name).font(.title)
+                                }.padding(.horizontal, 10).padding(.vertical, 5)
+                            }
+                            Text("Workouts").font(.headline).padding(.vertical, 10)
+                        }
                     }
                 }
             }.navigationTitle("Hello, \(viewModel.name)").navigationBarTitleDisplayMode(.large)
