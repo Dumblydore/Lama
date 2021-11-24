@@ -6,58 +6,79 @@
 //
 
 import Foundation
+import Combine
 
 class CalendarViewModel: ViewModel, ObservableObject {
-    
-    var dates: [Date] = []
-    var selectedDate = Date()
-    var classes: [Class] = [
-        Class(id: UUID().uuidString,title: "Title", startTime: "11:30am",endTime: "12:30pm", gym: "Test Gym", capacity: 10, enrolled: 5),
-        Class(id: UUID().uuidString, title: "Title", startTime: "11:30am",endTime: "12:30pm", gym: "Test Gym", capacity: 10, enrolled: 5),
-        Class(id: UUID().uuidString, title: "Title", startTime: "11:30am",endTime: "12:30pm", gym: "Test Gym", capacity: 10, enrolled: 5)
-    ]
-    
-    init() {
-        let calendar = Calendar(identifier: .gregorian)
-        var components = DateComponents()
-        components.calendar = calendar
 
-        components.year = -18
-        components.month = 12
-        let maxDate = calendar.date(byAdding: components, to: selectedDate)!
+    private let selectedDatePublisher = CurrentValueSubject<Date, Never>(Date())
+    private let session: Session
+    private let client: ZenApiClient
 
-        components.year = -150
-        let fmt = DateFormatter()
-        fmt.dateFormat = "dd/MM/yyyy"
-        let minDate = calendar.date(byAdding: components, to: selectedDate)!
+    @Published public private(set) var dates: [Date] = []
+    @Published public private(set) var selectedDate = Date()
+    @Published public private(set) var currentMonth: String
+    @Published public private(set) var classes: [ClassListItem] = []
+    private let monthFormat = DateFormatter()
+
+
+    init(session: Session, client: ZenApiClient) {
+        self.session = session
+        self.client = client
+
+        monthFormat.dateFormat = "MMMM"
+        currentMonth = monthFormat.string(from: Date())
+
+        let minDate = Date()
+        let maxDate = minDate.endOfYear
         var date = minDate
-        
+
         while date <= maxDate {
-            print(fmt.string(from: date))
             dates.append(date)
-            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+            date = date.dayAfter
         }
     }
-    
+
+    func onDateAppeared(date: Date) {
+        self.currentMonth = self.monthFormat.string(from: date)
+    }
+
+    func onDateClicked(date: Date) {
+        selectedDatePublisher.send(date)
+    }
+
+    func refresh() {
+        selectedDatePublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$selectedDate)
+
+        selectedDatePublisher.flatMap(getClassesForDay)
+            .replaceError(with: [])
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$classes)
+    }
+
+    private func getClassesForDay(date: Date) -> AnyPublisher<[ClassListItem], Error> {
+        return client.getClassForDates(personId: session.userId, beginDate: date, endDate: date.dayAfter)
+            .flatMap { $0.classes.publisher }
+            .map { classItem in
+            ClassListItem(
+                id: classItem.item.itemID,
+                title: classItem.item.name,
+                startTime: classItem.schedule.start,
+                endTime: classItem.schedule.end,
+                capacity: classItem.capacity.totalSpots,
+                enrolled: classItem.capacity.totalSpots - classItem.capacity.remainingSpots
+            )
+        }.collect().eraseToAnyPublisher()
+
+    }
 }
 
-
-struct Class : Hashable {
+struct ClassListItem: Hashable {
     let id: String
     let title: String
     let startTime: String
     let endTime: String
-    let gym: String
     let capacity: Int
     let enrolled: Int
-    
-    init(id: String, title: String, startTime: String,endTime: String, gym: String, capacity: Int, enrolled: Int) {
-        self.id = id
-        self.title = title
-        self.startTime = startTime
-        self.endTime = endTime
-        self.gym = gym
-        self.capacity = capacity
-        self.enrolled = enrolled
-    }
 }

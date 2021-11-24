@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 extension ZenApiClient {
-    func getReservations(personId: String) async throws -> ReservationResponse {
+    func getReservations(personId: String) -> AnyPublisher<ReservationResponse, Error> {
         let request = ReservationRequest(personId: personId)
-        return try await httpClient.post(url: host, body: request, headers: ["Authorization": "Bearer \(session.token)"])
+        return httpClient.post(url: "\(host)/elements/api-v2/calendars/reservations", body: request, headers: ["Authorization": "Bearer \(session.token)"])
     }
 }

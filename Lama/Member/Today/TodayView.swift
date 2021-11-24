@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TodayView: View {
-    private let viewModel: ReservationListViewModel
-    init(viewModel: ReservationListViewModel) {
+    @ObservedObject private var viewModel: TodayViewModel
+    init(viewModel: TodayViewModel) {
         self.viewModel = viewModel
     }
     var body: some View {
@@ -19,8 +19,6 @@ struct TodayView: View {
                     ProgressView()
                 } else if (viewModel.hasError) {
                     Text("Error!")
-                } else if(viewModel.reservations.isEmpty) {
-                    Text("No reservations!")
                 } else {
                     ScrollView(.vertical) {
                         VStack {
@@ -32,10 +30,18 @@ struct TodayView: View {
                                 }.padding(.horizontal, 10).padding(.vertical, 5)
                             }
                             Text("Workouts").font(.headline).padding(.vertical, 10)
+                            ForEach(viewModel.workouts) { workout in
+                                VStack(alignment: .leading) {
+                                    Text(workout.name)
+                                    ForEach(workout.skills, id: \.self) { skill in
+                                        Text(skill)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }.navigationTitle("Hello, \(viewModel.name)").navigationBarTitleDisplayMode(.large)
-        }
+        }.onAppear(perform: { viewModel.refresh() })
     }
 }

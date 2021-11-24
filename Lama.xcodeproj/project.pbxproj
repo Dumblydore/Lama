@@ -28,12 +28,17 @@
 		FEDA70B7274D2DD5007267F0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70B3274D2DD5007267F0 /* ViewModel.swift */; };
 		FEDA70B8274D2DD5007267F0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70B4274D2DD5007267F0 /* Repository.swift */; };
 		FEDA70B9274D2DD5007267F0 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70B5274D2DD5007267F0 /* Routes.swift */; };
+		FEDA70BD274DC1F9007267F0 /* WorkoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70BC274DC1F9007267F0 /* WorkoutResponse.swift */; };
+		FEDA70BF274DC231007267F0 /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70BE274DC231007267F0 /* WorkoutService.swift */; };
+		FEDA70C1274DC5C8007267F0 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70C0274DC5C8007267F0 /* DateExt.swift */; };
+		FEDA70C4274DEDDE007267F0 /* ClassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70C3274DEDDE007267F0 /* ClassResponse.swift */; };
+		FEDA70C6274DEE62007267F0 /* ClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70C5274DEE62007267F0 /* ClassService.swift */; };
+		FEDA70C8274DEE8A007267F0 /* ClassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA70C7274DEE8A007267F0 /* ClassRequest.swift */; };
 		FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A72270649D3000A1C42 /* TodayView.swift */; };
-		FEFD8A7627064B98000A1C42 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7527064B98000A1C42 /* ReservationView.swift */; };
 		FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7727064BAA000A1C42 /* ReservationResponse.swift */; };
 		FEFD8A7A27064D5B000A1C42 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7927064D5B000A1C42 /* ReservationRequest.swift */; };
 		FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7B27064D95000A1C42 /* ReservationService.swift */; };
-		FEFD8A7F27064E99000A1C42 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */; };
+		FEFD8A7F27064E99000A1C42 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A7E27064E99000A1C42 /* TodayViewModel.swift */; };
 		FEFD8A8427077587000A1C42 /* ZenApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A8327077587000A1C42 /* ZenApiClient.swift */; };
 		FEFD8A8727077721000A1C42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A8627077721000A1C42 /* Session.swift */; };
 		FEFD8A892708C402000A1C42 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFD8A882708C402000A1C42 /* UserResponse.swift */; };
@@ -84,12 +89,17 @@
 		FEDA70B3274D2DD5007267F0 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FEDA70B4274D2DD5007267F0 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FEDA70B5274D2DD5007267F0 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		FEDA70BC274DC1F9007267F0 /* WorkoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutResponse.swift; sourceTree = "<group>"; };
+		FEDA70BE274DC231007267F0 /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
+		FEDA70C0274DC5C8007267F0 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		FEDA70C3274DEDDE007267F0 /* ClassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassResponse.swift; sourceTree = "<group>"; };
+		FEDA70C5274DEE62007267F0 /* ClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassService.swift; sourceTree = "<group>"; };
+		FEDA70C7274DEE8A007267F0 /* ClassRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRequest.swift; sourceTree = "<group>"; };
 		FEFD8A72270649D3000A1C42 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		FEFD8A7527064B98000A1C42 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		FEFD8A7727064BAA000A1C42 /* ReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResponse.swift; sourceTree = "<group>"; };
 		FEFD8A7927064D5B000A1C42 /* ReservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		FEFD8A7B27064D95000A1C42 /* ReservationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
-		FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
+		FEFD8A7E27064E99000A1C42 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		FEFD8A8327077587000A1C42 /* ZenApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenApiClient.swift; sourceTree = "<group>"; };
 		FEFD8A8627077721000A1C42 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		FEFD8A882708C402000A1C42 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 		FE29EE5B27022BF500CD6594 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				FEDA70C2274DEDD6007267F0 /* Model */,
 				FE29EE622702329900CD6594 /* CalendarView.swift */,
 				FE5AD9BC2748763C0022C08D /* CalendarViewModel.swift */,
 			);
@@ -249,6 +260,7 @@
 				FEDA70B3274D2DD5007267F0 /* ViewModel.swift */,
 				FEDA70B4274D2DD5007267F0 /* Repository.swift */,
 				FEDA70B5274D2DD5007267F0 /* Routes.swift */,
+				FEDA70C0274DC5C8007267F0 /* DateExt.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -256,16 +268,35 @@
 		FEDA70BA274D6965007267F0 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				FEDA70BB274DC1EB007267F0 /* Model */,
 			);
 			path = Workout;
+			sourceTree = "<group>";
+		};
+		FEDA70BB274DC1EB007267F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA70BC274DC1F9007267F0 /* WorkoutResponse.swift */,
+				FEDA70BE274DC231007267F0 /* WorkoutService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEDA70C2274DEDD6007267F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA70C3274DEDDE007267F0 /* ClassResponse.swift */,
+				FEDA70C5274DEE62007267F0 /* ClassService.swift */,
+				FEDA70C7274DEE8A007267F0 /* ClassRequest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FEFD8A71270649C0000A1C42 /* Today */ = {
 			isa = PBXGroup;
 			children = (
 				FEFD8A7D27064E76000A1C42 /* Model */,
-				FEFD8A7527064B98000A1C42 /* ReservationView.swift */,
-				FEFD8A7E27064E99000A1C42 /* ReservationViewModel.swift */,
+				FEFD8A7E27064E99000A1C42 /* TodayViewModel.swift */,
 				FEFD8A72270649D3000A1C42 /* TodayView.swift */,
 			);
 			path = Today;
@@ -424,24 +455,29 @@
 				FE29EE632702329900CD6594 /* CalendarView.swift in Sources */,
 				FEFD8A8427077587000A1C42 /* ZenApiClient.swift in Sources */,
 				FEDA70B6274D2DD5007267F0 /* Persistence.swift in Sources */,
+				FEDA70BD274DC1F9007267F0 /* WorkoutResponse.swift in Sources */,
 				FEFD8A7C27064D95000A1C42 /* ReservationService.swift in Sources */,
 				FE5AD9BD2748763C0022C08D /* CalendarViewModel.swift in Sources */,
 				FE5AD9C1274D34B90022C08D /* HistoryView.swift in Sources */,
 				FEDA70A9274D2C95007267F0 /* MemberView.swift in Sources */,
 				FEB03DD32701911B00015525 /* LoginView.swift in Sources */,
+				FEDA70BF274DC231007267F0 /* WorkoutService.swift in Sources */,
 				FEB03DD62701915500015525 /* HttpClient.swift in Sources */,
 				FE5AD9C3274D34D00022C08D /* HistoryViewModel.swift in Sources */,
 				FEDA70B8274D2DD5007267F0 /* Repository.swift in Sources */,
+				FEDA70C8274DEE8A007267F0 /* ClassRequest.swift in Sources */,
 				FEFD8A73270649D3000A1C42 /* TodayView.swift in Sources */,
 				FEFD8A7827064BAA000A1C42 /* ReservationResponse.swift in Sources */,
-				FEFD8A7F27064E99000A1C42 /* ReservationViewModel.swift in Sources */,
+				FEFD8A7F27064E99000A1C42 /* TodayViewModel.swift in Sources */,
 				FEB03DDA2701959700015525 /* LoginRequest.swift in Sources */,
 				FE29EE5627021A4600CD6594 /* LoginService.swift in Sources */,
+				FEDA70C6274DEE62007267F0 /* ClassService.swift in Sources */,
 				FEDA70B7274D2DD5007267F0 /* ViewModel.swift in Sources */,
 				FEFD8A8727077721000A1C42 /* Session.swift in Sources */,
-				FEFD8A7627064B98000A1C42 /* ReservationView.swift in Sources */,
 				FE29EE522702121400CD6594 /* LoginResponse.swift in Sources */,
+				FEDA70C1274DC5C8007267F0 /* DateExt.swift in Sources */,
 				FE29EE5827021CD000CD6594 /* LoginViewModel.swift in Sources */,
+				FEDA70C4274DEDDE007267F0 /* ClassResponse.swift in Sources */,
 				FEFD8A7A27064D5B000A1C42 /* ReservationRequest.swift in Sources */,
 				FE61908826CAA80D00B4D697 /* LamaApp.swift in Sources */,
 				FEFD8A892708C402000A1C42 /* UserResponse.swift in Sources */,

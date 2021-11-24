@@ -8,29 +8,35 @@
 import SwiftUI
 
 struct CalendarView: View {
-    private let viewModel: CalendarViewModel
+    @ObservedObject private var viewModel: CalendarViewModel
     let dayFormat = DateFormatter()
     let dayOfWeekFormat = DateFormatter()
-    
+
     init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
         dayFormat.dateFormat = "dd"
         dayOfWeekFormat.dateFormat = "E"
     }
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView(.horizontal) {
-                            LazyHStack {
-                                ForEach(viewModel.dates, id: \.self) { date in
-                                    VStack(alignment: .center) {
-                                        Text(dayOfWeekFormat.string(from: date))
-                                        Text(dayFormat.string(from: date))
-                                    }
-                                }
+                    ScrollViewReader { scrollView in
+                        LazyHStack {
+                            ForEach(viewModel.dates, id: \.self) { date in
+                                VStack(alignment: .center) {
+                                    Text(dayOfWeekFormat.string(from: date))
+                                    Text(dayFormat.string(from: date))
+                                }.id(date)
+                                    .onAppear(perform: { viewModel.onDateAppeared(date: date) })
+                                    .onTapGesture { viewModel.onDateClicked(date: date) }
                             }
-                }.fixedSize(horizontal: false, vertical: true)
+                        }.onChange(of: viewModel.selectedDate) {
+                            value in scrollView.scrollTo(value)
+                        }
+                    }.fixedSize(horizontal: false, vertical: true)
+                }
                 Divider()
                 ScrollView(.vertical) {
                     LazyVStack {
@@ -41,41 +47,37 @@ struct CalendarView: View {
                     }
                 }
                 Spacer()
-            }.navigationTitle("November").navigationBarTitleDisplayMode(.inline)
+            }.navigationTitle("\(viewModel.currentMonth)").navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                                      Button("Workouts") {
-                                          print("Help tapped!")
-                                      }
-                                  }
-                              }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Workouts") {
+                        print("Help tapped!")
+                    }
+                }
+            }
+        }.onAppear {
+            viewModel.refresh()
         }
     }
 }
 
 struct ClassView: View {
-    private let classItem: Class
-    init(classItem: Class) {
+    private let classItem: ClassListItem
+    init(classItem: ClassListItem) {
         self.classItem = classItem
     }
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(classItem.gym).font(.subheadline)
+//                Text(classItem.).font(.subheadline)
                 Text(classItem.title).font(.title)
-                HStack{
+                HStack {
                     Text("\(classItem.startTime)-\(classItem.endTime)").font(.body)
                     Spacer()
                     Text("\(classItem.enrolled)/\\\(classItem.capacity)")
                 }
             }.padding(.horizontal, 20).padding(.vertical, 10)
         }
-    }
-}
-
-struct Calendar_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView(viewModel: CalendarViewModel())
     }
 }

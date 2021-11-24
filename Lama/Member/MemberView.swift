@@ -17,11 +17,11 @@ struct MemberView: View {
     }
     var body: some View {
             TabView {
-                TodayView(viewModel: ReservationListViewModel(session: session, client: zenClient)).tabItem {
+                TodayView(viewModel: TodayViewModel(session: session, client: zenClient)).tabItem {
                     Image(systemName: "doc.text.image")
-                    Text("Dashboard")
+                    Text("Today")
                 }
-                CalendarView(viewModel: CalendarViewModel()).tabItem {
+                CalendarView(viewModel: CalendarViewModel(session: session, client: zenClient)).tabItem {
                     Image(systemName: "calendar")
                     Text("Calendar")
                 }
