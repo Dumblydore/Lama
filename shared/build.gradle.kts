@@ -13,6 +13,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":common:ui"))
+
+                api(project(":feature:classes"))
                 api(project(":feature:root"))
                 api(project(":feature:login"))
 
@@ -33,7 +35,6 @@ kotlin {
 
                 export(project(":feature:root"))
 //                export(projects.core.analytics)
-//                export(projects.data.traktauth)
             }
         }
     }

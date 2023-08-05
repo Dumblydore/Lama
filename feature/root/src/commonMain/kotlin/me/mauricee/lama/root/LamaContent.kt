@@ -85,7 +85,10 @@ fun LamaContent(
 }
 
 private class LamaNavigator(private val navigator: Navigator) : Navigator {
-    override fun goTo(screen: Screen) = navigator.goTo(screen)
+    override fun goTo(screen: Screen) = when(screen) {
+        is LamaScreen -> navigator.goTo(screen)
+        else -> throw IllegalArgumentException("Unknown screen $screen")
+    }
 
     override fun pop(): Screen? = navigator.pop()
 

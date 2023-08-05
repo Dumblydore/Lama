@@ -6,6 +6,9 @@ import me.mauricee.lama.ui.CommonParcelize
 @CommonParcelize
 object LoginScreen : LamaScreen("login()")
 
+@CommonParcelize
+object ClassesScreen : LamaScreen("classes()")
+
 abstract class LamaScreen(val name: String) : Screen {
     open val arguments: Map<String, *>? = null
 }
