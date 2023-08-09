@@ -7,13 +7,10 @@ plugins {
 
 android {
     namespace = "me.mauricee.lama.android"
-    compileSdk = 33
     defaultConfig {
         applicationId = "me.mauricee.lama.android"
-        minSdk = 24
-        targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.1"
     }
     buildFeatures {
         buildConfig = true
@@ -37,6 +34,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.browser)
     implementation(libs.androidx.emoji)
+    implementation(libs.androidx.preference)
     implementation(libs.androidx.profileinstaller)
 
     implementation(libs.kotlin.coroutines.android)
@@ -44,6 +42,8 @@ dependencies {
     implementation(libs.google.firebase.crashlytics)
 
     implementation(libs.okhttp.loggingInterceptor)
+    implementation(libs.multiplatformsettings.core)
+    implementation(libs.multiplatformsettings.coroutines)
 
     ksp(libs.kotlininject.compiler)
 

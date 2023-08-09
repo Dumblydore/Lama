@@ -2,34 +2,39 @@ package me.mauricee.lama.root.home
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.shareIn
+import kotlinx.coroutines.launch
+import me.mauricee.lama.login.ObserveZenAuthState
+import me.mauricee.lama.login.ZenAuthState
 import me.tatarka.inject.annotations.Assisted
 import me.tatarka.inject.annotations.Inject
 
 @Inject
 class RootViewModel(
     @Assisted private val coroutineScope: CoroutineScope,
-//    observeTraktAuthState: ObserveTraktAuthState,
 //    private val updateUserDetails: UpdateUserDetails,
 //    observeUserDetails: ObserveUserDetails,
 //    private val logoutTrakt: LogoutTrakt,
 //    private val logger: Logger,
 ) {
 
-//    init {
-//        coroutineScope.launch {
+    init {
+        coroutineScope.launch {
 //            observeUserDetails.flow.collect { user ->
 //                logger.setUserId(user?.username ?: "")
 //            }
-//        }
+        }
 //        observeUserDetails(ObserveUserDetails.Params("me"))
-//
-//        coroutineScope.launch {
+
+        coroutineScope.launch {
 //            observeTraktAuthState.flow.collect { state ->
 //                if (state == TraktAuthState.LOGGED_IN) refreshMe()
 //            }
-//        }
-//        observeTraktAuthState(Unit)
-//    }
+        }
+//        zenAuthState(Unit)
+    }
 //
 //    private fun refreshMe() {
 //        coroutineScope.launch {

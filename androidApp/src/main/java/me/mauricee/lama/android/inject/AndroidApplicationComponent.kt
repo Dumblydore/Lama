@@ -2,21 +2,25 @@ package me.mauricee.lama.android.inject
 
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.compose.ui.unit.Density
+import androidx.preference.PreferenceManager
+import com.russhwolf.settings.ObservableSettings
+import com.russhwolf.settings.SharedPreferencesSettings
+import me.mauricee.lama.android.BuildConfig
 import me.mauricee.lama.android.LamaApplication
+import me.mauricee.lama.core.base.app.ApplicationInfo
+import me.mauricee.lama.core.base.di.ApplicationScope
 import me.mauricee.lama.di.SharedApplicationComponent
+import me.mauricee.lama.settings.AppSharedPreferences
+import me.mauricee.lama.zen.auth.AndroidAuthStore
+import me.mauricee.lama.zen.auth.AuthSharedPreferences
+import me.mauricee.lama.zen.auth.AuthStore
 import me.tatarka.inject.annotations.Component
 import me.tatarka.inject.annotations.Provides
-import okhttp3.Cache
-import okhttp3.ConnectionPool
-import okhttp3.Dispatcher
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import java.io.File
-import java.util.concurrent.TimeUnit
 
 @Component
-////@ApplicationScope
+@ApplicationScope
 abstract class AndroidApplicationComponent(
     @get:Provides val application: Application,
 ) : SharedApplicationComponent {
@@ -24,54 +28,53 @@ abstract class AndroidApplicationComponent(
 //    abstract val initializers: AppInitializers
 //    abstract val workerFactory: TiviWorkerFactory
 
-//    @Suppress("DEPRECATION")
-////    @ApplicationScope
-//    @Provides
-//    fun provideApplicationInfo(application: Application): ApplicationInfo {
-//        val packageInfo = application.packageManager.getPackageInfo(application.packageName, 0)
-//
-//        return ApplicationInfo(
-//            packageName = application.packageName,
-//            debugBuild = BuildConfig.DEBUG,
-//            flavor = when (BuildConfig.FLAVOR) {
-//                "qa" -> Flavor.Qa
-//                else -> Flavor.Standard
-//            },
-//            versionName = packageInfo.versionName,
-//            versionCode = packageInfo.versionCode,
-//        )
-//    }
+    @Suppress("DEPRECATION")
+    @ApplicationScope
+    @Provides
+    fun provideApplicationInfo(application: Application): ApplicationInfo {
+        val packageInfo = application.packageManager.getPackageInfo(application.packageName, 0)
+
+        return ApplicationInfo(
+            packageName = application.packageName,
+            debugBuild = BuildConfig.DEBUG,
+            versionName = packageInfo.versionName,
+            versionCode = packageInfo.versionCode,
+        )
+    }
 
 //    @Provides
 //    @IntoSet
 //    fun provideEmojiInitializer(bind: EmojiInitializer): AppInitializer = bind
 
-//    @ApplicationScope
-    @Provides
-    fun provideOkHttpClient(
-        context: Application,
-        interceptors: Set<Interceptor>,
-    ): OkHttpClient = OkHttpClient.Builder()
-        .apply { interceptors.forEach(::addInterceptor) }
-        // Around 4¢ worth of storage in 2020
-        .cache(Cache(File(context.cacheDir, "api_cache"), 50L * 1024 * 1024))
-        // Adjust the Connection pool to account for historical use of 3 separate clients
-        // but reduce the keepAlive to 2 minutes to avoid keeping radio open.
-        .connectionPool(ConnectionPool(10, 2, TimeUnit.MINUTES))
-        .dispatcher(
-            Dispatcher().apply {
-                // Allow for increased number of concurrent image fetches on same host
-                maxRequestsPerHost = 10
-            },
-        )
-        // Increase timeouts
-        .connectTimeout(20, TimeUnit.SECONDS)
-        .readTimeout(20, TimeUnit.SECONDS)
-        .writeTimeout(20, TimeUnit.SECONDS)
-        .build()
-
+    @ApplicationScope
     @Provides
     fun provideDensity(application: Application): Density = Density(application)
+
+    @ApplicationScope
+    @Provides
+    fun provideAuthSharedPrefs(
+        application: Application,
+    ): AuthSharedPreferences {
+        return application.getSharedPreferences("zen_auth", Context.MODE_PRIVATE)
+    }
+
+    @ApplicationScope
+    @Provides
+    fun provideSettings(delegate: AppSharedPreferences): ObservableSettings {
+        return SharedPreferencesSettings(delegate)
+    }
+
+    @ApplicationScope
+    @Provides
+    fun provideAppPreferences(
+        context: Application,
+    ): AppSharedPreferences {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+    }
+
+    @ApplicationScope
+    @Provides
+    fun provideAuthStore(store: AndroidAuthStore): AuthStore = store
 
     companion object {
         fun from(context: Context): AndroidApplicationComponent {

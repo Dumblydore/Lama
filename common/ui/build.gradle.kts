@@ -10,7 +10,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(libs.circuit.foundation)
+                api(libs.circuit.overlay)
 
+                api(project(":core:base"))
                 api(project(":common:resource:strings"))
                 api(libs.lyricist.library)
 
@@ -23,7 +25,7 @@ kotlin {
 
                 api(libs.insetsx)
                 implementation(libs.uuid)
-
+                api(libs.kotlinx.datetime)
                 implementation(libs.paging.compose)
             }
         }

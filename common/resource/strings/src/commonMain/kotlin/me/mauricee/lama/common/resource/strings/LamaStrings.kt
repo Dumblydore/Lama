@@ -14,6 +14,8 @@ object Locales {
 data class LamaStrings(
     val login: LoginStrings,
     val home: HomeStrings,
+    val defaultError: String,
+    val range: (from: String, to: String) -> String
 )
 
 /* Login */
@@ -29,6 +31,7 @@ data class LoginStrings(
 
 data class HomeStrings(
     val navigationItems: NavigationItems,
+    val classes: Classes
 )
 
 data class NavigationItems(
@@ -40,7 +43,11 @@ data class NavigationItems(
 )
 
 /* Classes */
-//data class Classes()
+data class Classes(
+    val membershipTab: String,
+    val reservedTab: String,
+    val dropInTab: String,
+) {}
 
 
 expect fun String.fmt(vararg args: Any?): String

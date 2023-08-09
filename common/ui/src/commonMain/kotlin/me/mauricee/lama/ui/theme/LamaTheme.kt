@@ -18,3 +18,13 @@ fun LamaTheme(
         content = content,
     )
 }
+
+//#E6EEFB
+//#C1D6F6
+
+//#78A7EB
+//#4E8BE5
+
+//#0E59C9
+
+//#083577

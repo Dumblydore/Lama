@@ -11,10 +11,11 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.Screen
 import com.slack.circuit.runtime.presenter.Presenter
 import kotlinx.coroutines.launch
+import me.mauricee.lama.ui.LocalStrings
+import me.mauricee.lama.ui.UIState
 import me.mauricee.lama.ui.base.ClassesScreen
 import me.mauricee.lama.ui.base.LoginScreen
-import me.mauricee.lama.zen.auth.LoginApi
-import me.mauricee.lama.zen.auth.LoginResult
+import me.mauricee.lama.ui.uiState
 import me.tatarka.inject.annotations.Assisted
 import me.tatarka.inject.annotations.Inject
 
@@ -37,26 +38,35 @@ class LoginUiPresenterFactory(
 @Inject
 class LoginPresenter(
     @Assisted private val navigator: Navigator,
-    private val loginApi: LoginApi
+    private val loginRepository: LoginRepository,
 ) : Presenter<LoginState> {
     @Composable
     override fun present(): LoginState {
         var username by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
-        var error by remember { mutableStateOf("") }
+        var uiState by uiState()
+        val enableLoginButton = remember(username, password) {
+            username.isNotBlank() && password.isNotBlank()
+        }
         val scope = rememberCoroutineScope()
 
         return LoginState(
             username = username,
             password = password,
-            result = error,
+            state = uiState,
+            enableLogin = enableLoginButton,
             eventSink = { event ->
                 when (event) {
                     LoginEvent.Login -> scope.launch {
-                        when (val result = loginApi.login(username, password)) {
-                            is LoginResult.Success -> navigator.goTo(ClassesScreen)
-                            is LoginResult.Error -> error = result.error.message ?: "Unknown error"
-                            LoginResult.IncorrectCredentials -> error = "Incorrect credentials"
+                        uiState = UIState.Loading
+                        uiState = when (val result = loginRepository.login(username, password)) {
+                            is LoginResult.Success -> {
+                                navigator.goTo(ClassesScreen)
+                                UIState.None
+                            }
+
+                            is LoginResult.Error -> UIState.Error { result.error.message }
+                            LoginResult.IncorrectCredentials -> UIState.Error { LocalStrings.current.login.invalidCredentialsMessage }
                         }
                     }
 

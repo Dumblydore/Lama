@@ -7,7 +7,9 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(project(":core:base"))
                 api(libs.lyricist.core)
+                api(libs.kotlinx.datetime)
             }
         }
 

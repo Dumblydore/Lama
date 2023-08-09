@@ -20,9 +20,11 @@ import me.mauricee.lama.android.inject.AndroidApplicationComponent
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.push
 import com.slack.circuit.foundation.rememberCircuitNavigator
+import me.mauricee.lama.core.base.di.ActivityScope
 import me.mauricee.lama.di.UiComponent
 import me.mauricee.lama.root.LamaContent
 import me.mauricee.lama.ui.base.LoginScreen
+import me.mauricee.lama.ui.base.StartScreen
 import me.tatarka.inject.annotations.Component
 import me.tatarka.inject.annotations.Provides
 
@@ -34,7 +36,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            val backstack = rememberSaveableBackStack { push(LoginScreen) }
+            val backstack = rememberSaveableBackStack { push(StartScreen) }
             val navigator = rememberCircuitNavigator(backstack)
 
             component.lamaContent(
@@ -53,6 +55,7 @@ class MainActivity : ComponentActivity() {
 
 
 @Component
+@ActivityScope
 abstract class MainActivityComponent(
     @get:Provides override val activity: Activity,
     @Component val applicationComponent: AndroidApplicationComponent = AndroidApplicationComponent.from(activity),

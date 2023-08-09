@@ -7,6 +7,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(libs.kotlin.coroutines.core)
+                api(libs.kotlinx.datetime)
                 api(libs.kotlininject.runtime)
             }
         }

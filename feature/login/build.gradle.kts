@@ -10,7 +10,7 @@ kotlin {
             dependencies {
                 implementation(project(":core:base"))
                 implementation(project(":common:ui"))
-                implementation(project(":api:zen"))
+                implementation(project(":domain"))
 
                 api(libs.kotlin.coroutines.core)
             }

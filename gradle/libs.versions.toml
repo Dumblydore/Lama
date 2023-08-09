@@ -18,6 +18,7 @@ multiplatformsettings = "1.0.0"
 okhttp = "4.11.0"
 kermit = "1.2.2" # Pinned back as Store uses Kermit 1.x
 ktor = "2.3.2"
+molecule = "1.1.0"
 paging-multiplatform = "3.2.0-alpha05-0.2.3"
 retrofit = "2.9.0"
 spotless = "6.20.0"
@@ -25,7 +26,6 @@ sqldelight = "2.0.0"
 ui-tooling-preview = "1.4.3"
 ui-tooling = "1.4.3"
 ui = "1.4.3"
-org-jetbrains-kotlin-jvm = "1.8.21"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -41,9 +41,9 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = "com.google.devtools.ksp:1.9.0-1.0.12"
 gms-googleServices = "com.google.gms.google-services:4.3.15"
 firebase-crashlytics = "com.google.firebase.crashlytics:2.9.7"
+molecule = { id = "app.cash.molecule", version.ref = "molecule" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
-org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 
 [libraries]
 androidx-activity-activity = { module = "androidx.activity:activity", version.ref = "androidxactivity" }
@@ -54,6 +54,7 @@ androidx-browser = "androidx.browser:browser:1.5.0"
 androidx-collection = "androidx.collection:collection:1.3.0-alpha04"
 androidx-core = "androidx.core:core-ktx:1.10.1"
 androidx-emoji = "androidx.emoji:emoji:1.1.0"
+androidx-preference = "androidx.preference:preference-ktx:1.2.0"
 
 androidx-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "foundation" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxlifecycle" }
@@ -137,7 +138,7 @@ ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-serialization = { module = "io.ktor:ktor-serialization", version.ref = "ktor" }
 ktor-client-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-
+molecule = { module = "app.cash.molecule:molecule-runtime", version.ref = "molecule" }
 playservices-blockstore = "com.google.android.gms:play-services-auth-blockstore:16.2.0"
 
 robolectric = "org.robolectric:robolectric:4.10.3"

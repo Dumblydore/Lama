@@ -1,3 +1,4 @@
+import app.lama.gradle.addKspDependencyForAllTargets
 import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
@@ -12,7 +13,10 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(project(":core:base"))
+                api(project(":core:preferences"))
                 api(project(":common:ui"))
+                api(project(":domain"))
 
                 api(project(":feature:classes"))
                 api(project(":feature:root"))
@@ -31,7 +35,7 @@ kotlin {
         targets.withType<KotlinNativeTarget>().configureEach {
             binaries.withType<Framework> {
                 isStatic = true
-                baseName = "TiviKt"
+                baseName = "LamaKt"
 
                 export(project(":feature:root"))
 //                export(projects.core.analytics)
@@ -48,4 +52,4 @@ ksp {
     arg("me.tatarka.inject.generateCompanionExtensions", "true")
 }
 
-//addKspDependencyForAllTargets(libs.kotlininject.compiler)
+addKspDependencyForAllTargets(libs.kotlininject.compiler)

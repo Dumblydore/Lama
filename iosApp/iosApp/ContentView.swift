@@ -1,24 +1,29 @@
 import SwiftUI
-import shared
+import LamaKt
 
 struct ContentView: View {
-    @State
-	private var greeting = "Loading"
+    private let component: HomeUiControllerComponent
 
-	var body: some View {
-		Text(greeting)
-            .onAppear {
-                let a = Greeting()
-                Task {
-                    greeting = try await a.greet()
-                }
-            }
-	}
-    
+    init(component: HomeUiControllerComponent) {
+        self.component = component
+    }
+
+    var body: some View {
+        ComposeView(component: self.component)
+            .ignoresSafeArea(.all, edges: .all)
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+struct ComposeView: UIViewControllerRepresentable {
+    private let component: HomeUiControllerComponent
+
+    init(component: HomeUiControllerComponent) {
+        self.component = component
+    }
+
+    func makeUIViewController(context _: Context) -> UIViewController {
+        return component.uiViewControllerFactory()
+    }
+
+    func updateUIViewController(_: UIViewController, context _: Context) {}
 }

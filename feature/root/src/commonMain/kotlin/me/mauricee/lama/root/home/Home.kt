@@ -70,57 +70,57 @@ internal fun Home(
 
     val strings = LocalStrings.current
     val navigationItems = remember(strings) { buildNavigationItems(strings) }
-
-    Scaffold(
-        bottomBar = {
-            if (displayNavigation && navigationType == NavigationType.BOTTOM_NAVIGATION) {
-                HomeNavigationBar(
-                    selectedNavigation = rootScreen,
-                    navigationItems = navigationItems,
-                    onNavigationSelected = { navigator.resetRoot(it) },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            } else {
-                Spacer(
-                    Modifier
-                        .windowInsetsBottomHeight(WindowInsets.navigationBars)
-                        .fillMaxWidth(),
-                )
-            }
-        },
-        contentWindowInsets = WindowInsets.systemBars.exclude(WindowInsets.statusBars),
-        modifier = modifier,
-    ) { paddingValues ->
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues),
-        ) {
-            if (displayNavigation) {
-                if (navigationType == NavigationType.RAIL) {
-                    HomeNavigationRail(
+    ContentWithOverlays {
+        Scaffold(
+            bottomBar = {
+                if (displayNavigation && navigationType == NavigationType.BOTTOM_NAVIGATION) {
+                    HomeNavigationBar(
                         selectedNavigation = rootScreen,
                         navigationItems = navigationItems,
                         onNavigationSelected = { navigator.resetRoot(it) },
-                        modifier = Modifier.fillMaxHeight(),
+                        modifier = Modifier.fillMaxWidth(),
                     )
-
-                    Divider(
+                } else {
+                    Spacer(
                         Modifier
-                            .fillMaxHeight()
-                            .width(1.dp),
-                    )
-                } else if (navigationType == NavigationType.PERMANENT_DRAWER) {
-                    HomeNavigationDrawer(
-                        selectedNavigation = rootScreen,
-                        navigationItems = navigationItems,
-                        onNavigationSelected = { navigator.resetRoot(it) },
-                        modifier = Modifier.fillMaxHeight(),
+                            .windowInsetsBottomHeight(WindowInsets.navigationBars)
+                            .fillMaxWidth(),
                     )
                 }
-            }
+            },
+            contentWindowInsets = WindowInsets.systemBars.exclude(WindowInsets.statusBars),
+            modifier = modifier,
+        ) { paddingValues ->
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+            ) {
+                if (displayNavigation) {
+                    if (navigationType == NavigationType.RAIL) {
+                        HomeNavigationRail(
+                            selectedNavigation = rootScreen,
+                            navigationItems = navigationItems,
+                            onNavigationSelected = { navigator.resetRoot(it) },
+                            modifier = Modifier.fillMaxHeight(),
+                        )
 
-            ContentWithOverlays {
+                        Divider(
+                            Modifier
+                                .fillMaxHeight()
+                                .width(1.dp),
+                        )
+                    } else if (navigationType == NavigationType.PERMANENT_DRAWER) {
+                        HomeNavigationDrawer(
+                            selectedNavigation = rootScreen,
+                            navigationItems = navigationItems,
+                            onNavigationSelected = { navigator.resetRoot(it) },
+                            modifier = Modifier.fillMaxHeight(),
+                        )
+                    }
+                }
+
+
                 NavigableCircuitContentWithPrevious(
                     navigator = navigator,
                     backstack = backstack,

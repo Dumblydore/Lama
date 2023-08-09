@@ -9,8 +9,11 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(project(":core:base"))
+                implementation(project(":core:preferences"))
                 implementation(project(":common:ui"))
+                implementation(project(":domain"))
                 implementation(project(":feature:login"))
+
                 api(libs.kotlininject.runtime)
 
                 implementation(libs.circuit.foundation)

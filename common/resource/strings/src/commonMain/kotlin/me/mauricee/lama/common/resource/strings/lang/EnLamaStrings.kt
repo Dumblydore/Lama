@@ -1,6 +1,7 @@
 package me.mauricee.lama.common.resource.strings.lang
 
 import cafe.adriel.lyricist.LyricistStrings
+import me.mauricee.lama.common.resource.strings.Classes
 import me.mauricee.lama.common.resource.strings.HomeStrings
 import me.mauricee.lama.common.resource.strings.LamaStrings
 import me.mauricee.lama.common.resource.strings.Locales
@@ -18,6 +19,11 @@ val EnLamaStrings = LamaStrings(
         unknownErrorMessage = { errorCode -> "Unknown error: %s".fmt(errorCode) },
     ),
     home = HomeStrings(
+        classes = Classes(
+            membershipTab = "Membership",
+            reservedTab = "Reserved",
+            dropInTab = "Drop In"
+        ),
         navigationItems = NavigationItems(
             classes = "Classes",
             workouts = "Workouts",
@@ -25,5 +31,7 @@ val EnLamaStrings = LamaStrings(
             notifications = "Notifications",
             about = "About"
         )
-    )
+    ),
+    defaultError = "Something went wrong",
+    range = { from, to -> "%s - %s".fmt(from, to) }
 )
